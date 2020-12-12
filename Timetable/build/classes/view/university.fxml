@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+
+<VBox styleClass="root" stylesheets="@/view/styling.css" fx:controller="controller.UniversityController" xmlns:fx="http://javafx.com/fxml">
+    <HBox styleClass="header" spacing="10" alignment="center">
+        <ImageView>
+            <image>
+                <Image url="@/view/logo.png"/>
+            </image>
+        </ImageView>
+        <Text styleClass="heading" text="Timetable System"/>
+    </HBox>
+    <HBox styleClass="content" alignment="center">
+        <ListView fx:id="studentsLv" items="${controller.university.students}" prefWidth="300" prefHeight="200">
+        <placeholder>
+            <Label text="No students"/>
+        </placeholder>
+        </ListView>
+    </HBox>
+    <HBox styleClass="footer" spacing="10" alignment="center">
+        <Button fx:id="addStudentBtn" text="Add Student" onAction="#handleAdd"/>
+        <Button fx:id="removeStudentBtn" text="Remove Student" disable="true" onAction="#handleRemove"/>
+        <Button fx:id="loginBtn" text="Login" disable="true" onAction="#handleLogin"/>
+    </HBox>
+</VBox>
